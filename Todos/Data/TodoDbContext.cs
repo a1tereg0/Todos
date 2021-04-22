@@ -7,9 +7,9 @@ using Todos.Data.Models;
 
 namespace Todos.Data
 {
-    public class TodoDbContext : IdentityDbContext
+    public class TodoDbContext : DbContext
     {
-        public TodoDbContext(DbContextOptions<ApplicationDbContext> options)
+        public TodoDbContext(DbContextOptions<TodoDbContext> options)
             : base(options)
         {
         }
