@@ -36,6 +36,6 @@ namespace Todos.Data.Models
 
         [Display(Name = "Date of Completion")]
         [DataType(DataType.DateTime)]
-        public DateTime? DateCompleted { get; set; }
+        public DateTime? DateCompleted => Completed ? DateTime.Now : null;
     }
 }

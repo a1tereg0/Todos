@@ -25,5 +25,6 @@ namespace Todos.Pages.Admin.TodoPages
         {
             Todo = await _context.Todos.ToListAsync();
         }
+
     }
 }

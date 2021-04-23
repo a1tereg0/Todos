@@ -3,8 +3,63 @@
 @{
     ViewData["Title"] = "Home page";
 }
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="font-weight-light">Completed in last 24 hours</h2>
+            @if (Model.TodosCompletedLastDay.Count > 0)
+            {
+                @foreach (var item in Model.TodosCompletedLastDay)
+                {
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success">@item.Title</li>
+                    </ul>
+                }
+            }
+            else
+            {
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-success">Nothing Completed in last 24 hours</li>
+                </ul>
+            }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+        </div>
+        <div class="col-sm-6">
+            <h2 class="font-weight-light">Due in 24 hours</h2>
+            @if (Model.TodosToBeCompletedToday.Count > 0)
+            {
+                @foreach (var item in Model.TodosToBeCompletedToday)
+                {
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-warning">@item.Title</li>
+                    </ul>
+                }
+            }
+            else
+            {
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-warning">Nothing Due in 24 hours</li>
+                </ul>
+            }
+
+
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="offset-sm-1 col-sm-10">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Not signed in?</h5>
+                    <p class="card-text">Sign in or register to unlock the features of the this todo app.</p>
+                    <a href="/Identity/Account/Login" class="btn btn-primary">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
