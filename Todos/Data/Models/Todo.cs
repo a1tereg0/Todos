@@ -27,12 +27,14 @@ namespace Todos.Data.Models
         [DataType(DataType.DateTime)]
         public DateTime DateAdded => DateTime.Now;
 
+        [Display(Name = "Due Date")]
         [DataType(DataType.DateTime)]
         [Required]
         public DateTime DueDate { get; set; }
 
         public Boolean Completed { get; set; } = false;
 
+        [Display(Name = "Date of Completion")]
         [DataType(DataType.DateTime)]
         public DateTime DateCompleted { get; set; }
     }
