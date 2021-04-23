@@ -1,0 +1,22 @@
+{
+  "name": "The Todos App",
+  "short_name": "Todos",
+  "description": "This is a simple todo application. ",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "orientation": "natural",
+  "lang": "English",
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "images/icons/icon-250.png",
+      "sizes": "250x250",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-500.png",
+      "sizes": "500x500",
+      "type": "image/png"
+    }
+  ]
+}
