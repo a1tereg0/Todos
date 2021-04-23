@@ -1,7 +1,7 @@
 ﻿const DEFAULT_CACHE = "default_cache-v1";
 
 let urls = [
-    "/",
+/*    "/", removed index caching because its returning unauthenticated index page after authentication*/
     "/css/site.css",
     "/js/site.js"
 ];
